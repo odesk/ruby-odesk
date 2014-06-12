@@ -1,0 +1,41 @@
+$:.unshift 'lib'
+$LOAD_PATH << File.dirname(__FILE__)
+
+require 'helper'
+require 'odesk/api/routers/mc'
+require 'test/unit'
+require 'mocha/test_unit'
+
+class McTest < Test::Unit::TestCase
+  include TestHelper
+  
+  def test_get_trays
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.get_trays
+  end
+  
+  def test_get_tray_by_type
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.get_tray_by_type('username', 'type')
+  end
+  
+  def test_get_thread_details
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.get_thread_details('username', '12')
+  end
+  
+  def test_start_new_thread
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.start_new_thread('username', {})
+  end
+  
+  def test_reply_to_thread
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.reply_to_thread('username', '12', {})
+  end
+  
+  def test_mark_thread
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.mark_thread('username', '12', {})
+  end
+end
