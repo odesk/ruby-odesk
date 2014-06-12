@@ -67,4 +67,4 @@ Follow instructions from `Installation` section.
 
 2.
 Open `myapp.rb` and type the `consumer_key` and `consumer_secret` that you previously got from the API Center.
-***That's all. Run your app as `php myapp.php` and have fun.***'
+***That's all. Run your app as `ruby myapp.rb` and have fun.***'
