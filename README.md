@@ -2,6 +2,7 @@ Ruby bindings for oDesk API
 ============
 
 [![License](http://img.shields.io/packagist/l/odesk/php-odesk.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![Gem Version](https://badge.fury.io/rb/odesk-api.svg)](http://badge.fury.io/rb/odesk-api)
 
 # Odesk::Api
 
