@@ -3,7 +3,7 @@ Ruby bindings for oDesk API
 
 [![License](http://img.shields.io/packagist/l/odesk/php-odesk.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Gem Version](https://badge.fury.io/rb/odesk-api.svg)](http://badge.fury.io/rb/odesk-api)
-[![Stories in Ready](http://badge.waffle.io/jeremytregunna/ruby-trello.png)](http://waffle.io/jeremytregunna/ruby-trello)
+[![Stories in Ready](http://badge.waffle.io/odesk/ruby-odesk.png)](http://waffle.io/odesk/ruby-odesk)
 
 # Odesk::Api
 
