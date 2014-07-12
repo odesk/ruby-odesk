@@ -5,7 +5,7 @@ rvm:
   - 1.9.3
   - 2.0.0
   - ruby-head
-install: gem install oauth
+install: gem install oauth mocha
 notifications:
   email:
     recipients:
