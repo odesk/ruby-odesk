@@ -4,7 +4,7 @@ rvm:
   - 1.9.3
   - 2.0.0
   - ruby-head
-install: gem install oauth mocha
+install: gem install oauth test-unit mocha
 matrix:
   allow_failures:
     - rvm: ruby-head
