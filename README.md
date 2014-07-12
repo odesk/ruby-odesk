@@ -49,6 +49,12 @@ The usage of this API is ruled by the Terms of Use at:
 
     http://developers.odesk.com/API-Terms-of-Use
 
+# Application Integration
+To integrate this library you need to have:
+
+* Ruby >= 1.9.3
+* OAuth Extension installed (use `gem install oauth`)
+
 ## Installation
 
 Add this line to your application's Gemfile:
