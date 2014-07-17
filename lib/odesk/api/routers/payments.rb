@@ -27,22 +27,12 @@ module Odesk
           @client.epoint = ENTRY_POINT 
         end
         
-        # Get adjustments
-        #
-        # Arguments:
-        #  team_reference: (String)
-        #  params: (Hash)
-        def submit_bonus(team_reference, params)
-          $LOG.i "running " + __method__.to_s
-          @client.get '/hr/v2/teams/' + team_reference + '/adjustments', params
-        end
-        
         # Submit bonus
         #
         # Arguments:
         #  team_reference: (String)
         #  params: (Hash)
-        def get_adjustments(team_reference, params)
+        def submit_bonus(team_reference, params)
           $LOG.i "running " + __method__.to_s
           @client.post '/hr/v2/teams/' + team_reference + '/adjustments', params
         end
