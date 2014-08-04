@@ -34,6 +34,16 @@ class ActivitiesTeamTest < Test::Unit::TestCase
     assert api.update_activities('company', 'team', 'code', {})
   end
     
+  def test_archive_activities
+    api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
+    assert api.archive_activities('company', 'team', 'code')
+  end
+    
+  def test_unarchive_activities
+    api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
+    assert api.unarchive_activities('company', 'team', 'code')
+  end
+    
   def test_delete_activities
     api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
     assert api.delete_activities('company', 'team', 'code')

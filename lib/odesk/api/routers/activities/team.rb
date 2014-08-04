@@ -28,7 +28,7 @@ module Odesk
             @client.epoint = ENTRY_POINT 
           end
           
-          # List all oTask/Activity records within a Company
+          # List all oTask/Activity records within a team
           #
           # Arguments:
           #  company: (String)
@@ -56,7 +56,7 @@ module Odesk
             get_by_type company, team, code, false
           end
           
-          # Create an oTask/Activity record within a company
+          # Create an oTask/Activity record within a team
           #
           # Arguments:
           #  company: (String)
@@ -66,7 +66,7 @@ module Odesk
             @client.post '/otask/v1/tasks/companies/' + company + '/' + team + '/tasks', params
           end
           
-          # Update specific oTask/Activity record within a company
+          # Update specific oTask/Activity record within a team
           #
           # Arguments:
           #  company: (String)
@@ -77,7 +77,27 @@ module Odesk
             @client.put '/otask/v1/tasks/companies/' + company + '/' + team + '/tasks/' + code, params
           end
           
-          # Delete specific oTask/Activity record within a company
+          # Archive specific oTask/Activity record within a team
+          #
+          # Arguments:
+          #  company: (String)
+          #  team: (String)
+          #  code: (String)
+          def archive_activities(company, team, code)
+            @client.put '/otask/v1/tasks/companies/' + company + '/' + team + '/archive/' + code
+          end
+          
+          # Unarchive specific oTask/Activity record within a team
+          #
+          # Arguments:
+          #  company: (String)
+          #  team: (String)
+          #  code: (String)
+          def unarchive_activities(company, team, code)
+            @client.put '/otask/v1/tasks/companies/' + company + '/' + team + '/unarchive/' + code
+          end
+          
+          # Delete specific oTask/Activity record within a team
           #
           # Arguments:
           #  company: (String)
@@ -87,7 +107,7 @@ module Odesk
             @client.delete '/otask/v1/tasks/companies/' + company + '/' + team + '/tasks/' + code
           end
           
-          # Delete all oTask/Activity records within a company
+          # Delete all oTask/Activity records within a team
           #
           # Arguments:
           #  company: (String)
