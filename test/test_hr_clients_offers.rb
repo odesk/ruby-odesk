@@ -16,7 +16,7 @@ class HrClientsOffersTest < Test::Unit::TestCase
   
   def test_get_specific
     api = Odesk::Api::Routers::Hr::Clients::Offers.new(get_client_mock)
-    assert api.get_specific('12')
+    assert api.get_specific('12', {})
   end
   
   def test_make_offer

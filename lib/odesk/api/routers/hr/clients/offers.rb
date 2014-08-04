@@ -42,9 +42,10 @@ module Odesk
             #
             # Arguments:
             #  reference: (String)
-            def get_specific(reference)
+            #  params: (Hash)
+            def get_specific(reference, params)
               $LOG.i "running " + __method__.to_s
-              @client.get '/offers/v1/clients/offers/' + reference
+              @client.get '/offers/v1/clients/offers/' + reference, params
             end
             
             # Make an Offer
