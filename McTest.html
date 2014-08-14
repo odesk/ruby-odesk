@@ -65,6 +65,10 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
+          <li><a href="#method-i-test_get_thread_by_context">#test_get_thread_by_context</a></li>
+          
+          <li><a href="#method-i-test_get_thread_by_context_last_posts">#test_get_thread_by_context_last_posts</a></li>
+          
           <li><a href="#method-i-test_get_thread_details">#test_get_thread_details</a></li>
           
           <li><a href="#method-i-test_get_tray_by_type">#test_get_tray_by_type</a></li>
@@ -142,8 +146,6 @@
         
           <li><a href="./Odesk/Api/Routers/Activities.html">Odesk::Api::Routers::Activities</a></li>
         
-          <li><a href="./Odesk/Api/Routers/Activities/Company.html">Odesk::Api::Routers::Activities::Company</a></li>
-        
           <li><a href="./Odesk/Api/Routers/Activities/Engagement.html">Odesk::Api::Routers::Activities::Engagement</a></li>
         
           <li><a href="./Odesk/Api/Routers/Activities/Team.html">Odesk::Api::Routers::Activities::Team</a></li>
@@ -217,8 +219,6 @@
           <li><a href="./Odesk/Api/Routers/Teams.html">Odesk::Api::Routers::Teams</a></li>
         
           <li><a href="./Odesk/Api/Routers/Workdiary.html">Odesk::Api::Routers::Workdiary</a></li>
-        
-          <li><a href="./ActivitiesCompanyTest.html">ActivitiesCompanyTest</a></li>
         
           <li><a href="./ActivitiesEngagementTest.html">ActivitiesEngagementTest</a></li>
         
@@ -315,6 +315,74 @@
       
       <div id="public-instance-method-details" class="method-section section">
         <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="test_get_thread_by_context-method" class="method-detail ">
+          <a name="method-i-test_get_thread_by_context"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_get_thread_by_context</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_get_thread_by_context-source">
+<pre>
+<span class="ruby-comment"># File test/test_mc.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_thread_by_context</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Mc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_thread_by_context</span>(<span class="ruby-string">'username'</span>, <span class="ruby-string">'~key'</span>, <span class="ruby-string">'12'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_get_thread_by_context-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_get_thread_by_context-method -->
+
+      
+        <div id="test_get_thread_by_context_last_posts-method" class="method-detail ">
+          <a name="method-i-test_get_thread_by_context_last_posts"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_get_thread_by_context_last_posts</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_get_thread_by_context_last_posts-source">
+<pre>
+<span class="ruby-comment"># File test/test_mc.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_thread_by_context_last_posts</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Mc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_thread_by_context_last_posts</span>(<span class="ruby-string">'username'</span>, <span class="ruby-string">'~key'</span>, <span class="ruby-string">'12'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_get_thread_by_context_last_posts-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_get_thread_by_context_last_posts-method -->
 
       
         <div id="test_get_thread_details-method" class="method-detail ">
@@ -438,7 +506,7 @@
             
             <div class="method-source-code" id="test_mark_thread-source">
 <pre>
-<span class="ruby-comment"># File test/test_mc.rb, line 37</span>
+<span class="ruby-comment"># File test/test_mc.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_mark_thread</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Mc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">mark_thread</span>(<span class="ruby-string">'username'</span>, <span class="ruby-string">'12'</span>, {})
@@ -472,7 +540,7 @@
             
             <div class="method-source-code" id="test_reply_to_thread-source">
 <pre>
-<span class="ruby-comment"># File test/test_mc.rb, line 32</span>
+<span class="ruby-comment"># File test/test_mc.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_reply_to_thread</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Mc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">reply_to_thread</span>(<span class="ruby-string">'username'</span>, <span class="ruby-string">'12'</span>, {})
@@ -506,7 +574,7 @@
             
             <div class="method-source-code" id="test_start_new_thread-source">
 <pre>
-<span class="ruby-comment"># File test/test_mc.rb, line 27</span>
+<span class="ruby-comment"># File test/test_mc.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_start_new_thread</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Mc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">start_new_thread</span>(<span class="ruby-string">'username'</span>, {})

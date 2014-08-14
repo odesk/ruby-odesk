@@ -67,6 +67,10 @@
           
           <li><a href="#method-c-new">::new</a></li>
           
+          <li><a href="#method-i-get_thread_by_context">#get_thread_by_context</a></li>
+          
+          <li><a href="#method-i-get_thread_by_context_last_posts">#get_thread_by_context_last_posts</a></li>
+          
           <li><a href="#method-i-get_thread_details">#get_thread_details</a></li>
           
           <li><a href="#method-i-get_tray_by_type">#get_tray_by_type</a></li>
@@ -131,8 +135,6 @@
           <li><a href="../../../Odesk/Api/Routers.html">Odesk::Api::Routers</a></li>
         
           <li><a href="../../../Odesk/Api/Routers/Activities.html">Odesk::Api::Routers::Activities</a></li>
-        
-          <li><a href="../../../Odesk/Api/Routers/Activities/Company.html">Odesk::Api::Routers::Activities::Company</a></li>
         
           <li><a href="../../../Odesk/Api/Routers/Activities/Engagement.html">Odesk::Api::Routers::Activities::Engagement</a></li>
         
@@ -207,8 +209,6 @@
           <li><a href="../../../Odesk/Api/Routers/Teams.html">Odesk::Api::Routers::Teams</a></li>
         
           <li><a href="../../../Odesk/Api/Routers/Workdiary.html">Odesk::Api::Routers::Workdiary</a></li>
-        
-          <li><a href="../../../ActivitiesCompanyTest.html">ActivitiesCompanyTest</a></li>
         
           <li><a href="../../../ActivitiesEngagementTest.html">ActivitiesEngagementTest</a></li>
         
@@ -364,6 +364,88 @@
         <h3 class="section-header">Public Instance Methods</h3>
 
       
+        <div id="get_thread_by_context-method" class="method-detail ">
+          <a name="method-i-get_thread_by_context"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_thread_by_context</span><span
+              class="method-args">(username, job_key, application_id, context = 'Interviews')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get a specific thread by context</p>
+
+<p>Arguments:</p>
+
+<pre>username: (String)
+job_key: (String)
+application_id: (String)
+context: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_thread_by_context-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_thread_by_context</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">job_key</span>, <span class="ruby-identifier">application_id</span>, <span class="ruby-identifier">context</span> = <span class="ruby-string">'Interviews'</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/mc/v1/contexts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">username</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">context</span> <span class="ruby-operator">+</span> <span class="ruby-string">':'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">job_key</span> <span class="ruby-operator">+</span> <span class="ruby-string">':'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">application_id</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_thread_by_context-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_thread_by_context-method -->
+
+      
+        <div id="get_thread_by_context_last_posts-method" class="method-detail ">
+          <a name="method-i-get_thread_by_context_last_posts"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_thread_by_context_last_posts</span><span
+              class="method-args">(username, job_key, application_id, context = 'Interviews')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get a specific thread by context (last message content)</p>
+
+<p>Arguments:</p>
+
+<pre>username: (String)
+job_key: (String)
+application_id: (String)
+context: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_thread_by_context_last_posts-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_thread_by_context_last_posts</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">job_key</span>, <span class="ruby-identifier">application_id</span>, <span class="ruby-identifier">context</span> = <span class="ruby-string">'Interviews'</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/mc/v1/contexts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">username</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">context</span> <span class="ruby-operator">+</span> <span class="ruby-string">':'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">job_key</span> <span class="ruby-operator">+</span> <span class="ruby-string">':'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">application_id</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/last_posts'</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_thread_by_context_last_posts-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_thread_by_context_last_posts-method -->
+
+      
         <div id="get_thread_details-method" class="method-detail ">
           <a name="method-i-get_thread_details"></a>
 
@@ -501,7 +583,7 @@ params: (Hash)</pre>
             
             <div class="method-source-code" id="mark_thread-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 82</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">mark_thread</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">thread_id</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/mc/v1/threads/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">username</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">thread_id</span>, <span class="ruby-identifier">params</span>
@@ -541,7 +623,7 @@ params: (Hash)</pre>
             
             <div class="method-source-code" id="reply_to_thread-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 71</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 95</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">reply_to_thread</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">thread_id</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">post</span> <span class="ruby-string">'/mc/v1/threads/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">username</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">thread_id</span>, <span class="ruby-identifier">params</span>
@@ -580,7 +662,7 @@ params: (Hash)</pre>
             
             <div class="method-source-code" id="start_new_thread-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 60</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/mc.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">start_new_thread</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">post</span> <span class="ruby-string">'/mc/v1/threads/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">username</span>, <span class="ruby-identifier">params</span>

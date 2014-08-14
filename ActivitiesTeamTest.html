@@ -69,12 +69,6 @@
           
           <li><a href="#method-i-test_archive_activities">#test_archive_activities</a></li>
           
-          <li><a href="#method-i-test_delete_activities">#test_delete_activities</a></li>
-          
-          <li><a href="#method-i-test_delete_all_activities">#test_delete_all_activities</a></li>
-          
-          <li><a href="#method-i-test_get_full_list">#test_get_full_list</a></li>
-          
           <li><a href="#method-i-test_get_list">#test_get_list</a></li>
           
           <li><a href="#method-i-test_get_specific_list">#test_get_specific_list</a></li>
@@ -147,8 +141,6 @@
           <li><a href="./Odesk/Api/Routers.html">Odesk::Api::Routers</a></li>
         
           <li><a href="./Odesk/Api/Routers/Activities.html">Odesk::Api::Routers::Activities</a></li>
-        
-          <li><a href="./Odesk/Api/Routers/Activities/Company.html">Odesk::Api::Routers::Activities::Company</a></li>
         
           <li><a href="./Odesk/Api/Routers/Activities/Engagement.html">Odesk::Api::Routers::Activities::Engagement</a></li>
         
@@ -223,8 +215,6 @@
           <li><a href="./Odesk/Api/Routers/Teams.html">Odesk::Api::Routers::Teams</a></li>
         
           <li><a href="./Odesk/Api/Routers/Workdiary.html">Odesk::Api::Routers::Workdiary</a></li>
-        
-          <li><a href="./ActivitiesCompanyTest.html">ActivitiesCompanyTest</a></li>
         
           <li><a href="./ActivitiesEngagementTest.html">ActivitiesEngagementTest</a></li>
         
@@ -342,7 +332,7 @@
             
             <div class="method-source-code" id="test_add_activity-source">
 <pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 27</span>
+<span class="ruby-comment"># File test/test_activities_team.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_add_activity</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">add_activity</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>, {})
@@ -376,7 +366,7 @@
             
             <div class="method-source-code" id="test_archive_activities-source">
 <pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 37</span>
+<span class="ruby-comment"># File test/test_activities_team.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_archive_activities</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">archive_activities</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>, <span class="ruby-string">'code'</span>)
@@ -389,108 +379,6 @@
 
           
         </div><!-- test_archive_activities-method -->
-
-      
-        <div id="test_delete_activities-method" class="method-detail ">
-          <a name="method-i-test_delete_activities"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">test_delete_activities</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="test_delete_activities-source">
-<pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 47</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_delete_activities</span>
-  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
-  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">delete_activities</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>, <span class="ruby-string">'code'</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- test_delete_activities-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- test_delete_activities-method -->
-
-      
-        <div id="test_delete_all_activities-method" class="method-detail ">
-          <a name="method-i-test_delete_all_activities"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">test_delete_all_activities</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="test_delete_all_activities-source">
-<pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 52</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_delete_all_activities</span>
-  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
-  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">delete_all_activities</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- test_delete_all_activities-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- test_delete_all_activities-method -->
-
-      
-        <div id="test_get_full_list-method" class="method-detail ">
-          <a name="method-i-test_get_full_list"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">test_get_full_list</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="test_get_full_list-source">
-<pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 17</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_full_list</span>
-  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
-  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_full_list</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- test_get_full_list-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- test_get_full_list-method -->
 
       
         <div id="test_get_list-method" class="method-detail ">
@@ -546,7 +434,7 @@
             
             <div class="method-source-code" id="test_get_specific_list-source">
 <pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 22</span>
+<span class="ruby-comment"># File test/test_activities_team.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_specific_list</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_specific_list</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>, <span class="ruby-string">'code'</span>)
@@ -580,7 +468,7 @@
             
             <div class="method-source-code" id="test_unarchive_activities-source">
 <pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 42</span>
+<span class="ruby-comment"># File test/test_activities_team.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_unarchive_activities</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">unarchive_activities</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>, <span class="ruby-string">'code'</span>)
@@ -614,7 +502,7 @@
             
             <div class="method-source-code" id="test_update_activities-source">
 <pre>
-<span class="ruby-comment"># File test/test_activities_team.rb, line 32</span>
+<span class="ruby-comment"># File test/test_activities_team.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_update_activities</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">update_activities</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>, <span class="ruby-string">'code'</span>, {})
