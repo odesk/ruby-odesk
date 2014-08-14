@@ -145,7 +145,7 @@ module Odesk
 
         case method
         when :get
-          url = get_url_with_params get_uri_with_format(uri), params
+          url = get_url_with_params get_uri_with_format(uri), params.each { |k, v| params[k] = OAuth::Helper::escape(v) }
           response = @access_token.get(url).body
         when :post, :put, :delete
           response = @access_token.post(get_uri_with_format(uri), params).body

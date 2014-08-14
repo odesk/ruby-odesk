@@ -24,6 +24,16 @@ class McTest < Test::Unit::TestCase
     assert api.get_thread_details('username', '12')
   end
   
+  def test_get_thread_by_context
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.get_thread_by_context('username', '~key', '12')
+  end
+  
+  def test_get_thread_by_context_last_posts
+    api = Odesk::Api::Routers::Mc.new(get_client_mock)
+    assert api.get_thread_by_context_last_posts('username', '~key', '12')
+  end
+  
   def test_start_new_thread
     api = Odesk::Api::Routers::Mc.new(get_client_mock)
     assert api.start_new_thread('username', {})

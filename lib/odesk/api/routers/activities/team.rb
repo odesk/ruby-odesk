@@ -34,16 +34,7 @@ module Odesk
           #  company: (String)
           #  team: (String)
           def get_list(company, team)
-            get_by_type company, team, nil, false
-          end
-          
-          # List all oTask/Activity records within a Company with additional info
-          #
-          # Arguments:
-          #  company: (String)
-          #  team: (String)
-          def get_full_list(company, team)
-            get_by_type company, team, nil, true
+            get_by_type company, team, nil
           end
           
           # List all oTask/Activity records within a Company by specified code(s)
@@ -53,7 +44,7 @@ module Odesk
           #  team: (String)
           #  code: (String)
           def get_specific_list(company, team, code)
-            get_by_type company, team, code, false
+            get_by_type company, team, code
           end
           
           # Create an oTask/Activity record within a team
@@ -97,34 +88,13 @@ module Odesk
             @client.put '/otask/v1/tasks/companies/' + company + '/' + team + '/unarchive/' + code
           end
           
-          # Delete specific oTask/Activity record within a team
-          #
-          # Arguments:
-          #  company: (String)
-          #  team: (String)
-          #  code: (String)
-          def delete_activities(company, team, code)
-            @client.delete '/otask/v1/tasks/companies/' + company + '/' + team + '/tasks/' + code
-          end
-          
-          # Delete all oTask/Activity records within a team
-          #
-          # Arguments:
-          #  company: (String)
-          #  team: (String)
-          def delete_all_activities(company, team)
-            @client.delete '/otask/v1/tasks/companies/' + company + '/' + team + '/tasks/all_tasks'
-          end
-          
           private
           
           # Get by type
-          def get_by_type(company, team, code = nil, is_full = false)
+          def get_by_type(company, team, code = nil)
             $LOG.i "running " + __method__.to_s
             url = '';
-            if (is_full)
-                url = '/full_list';
-            elsif code != nil
+            if code != nil
                 url = '/' + code;
             end
     

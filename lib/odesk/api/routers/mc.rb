@@ -52,6 +52,30 @@ module Odesk
           @client.get '/mc/v1/threads/' + username + '/' + thread_id
         end
         
+        # Get a specific thread by context
+        #
+        # Arguments:
+        #  username: (String)
+        #  job_key: (String)
+        #  application_id: (String)
+        #  context: (String)
+        def get_thread_by_context(username, job_key, application_id, context = 'Interviews')
+          $LOG.i "running " + __method__.to_s
+          @client.get '/mc/v1/contexts/' + username + '/' + context + ':' + job_key + ':' + application_id
+        end
+        
+        # Get a specific thread by context (last message content)
+        #
+        # Arguments:
+        #  username: (String)
+        #  job_key: (String)
+        #  application_id: (String)
+        #  context: (String)
+        def get_thread_by_context_last_posts(username, job_key, application_id, context = 'Interviews')
+          $LOG.i "running " + __method__.to_s
+          @client.get '/mc/v1/contexts/' + username + '/' + context + ':' + job_key + ':' + application_id + '/last_posts'
+        end
+        
         # Send new message
         #
         # Arguments:

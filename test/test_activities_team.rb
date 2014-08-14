@@ -14,11 +14,6 @@ class ActivitiesTeamTest < Test::Unit::TestCase
     assert api.get_list('company', 'team')
   end
   
-  def test_get_full_list
-    api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
-    assert api.get_full_list('company', 'team')
-  end
-  
   def test_get_specific_list
     api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
     assert api.get_specific_list('company', 'team', 'code')
@@ -42,15 +37,5 @@ class ActivitiesTeamTest < Test::Unit::TestCase
   def test_unarchive_activities
     api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
     assert api.unarchive_activities('company', 'team', 'code')
-  end
-    
-  def test_delete_activities
-    api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
-    assert api.delete_activities('company', 'team', 'code')
-  end
-    
-  def test_delete_all_activities
-    api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
-    assert api.delete_all_activities('company', 'team')
   end
 end
