@@ -122,7 +122,7 @@ module Odesk
       
       # get url with parameters for get requests
       def get_url_with_params(path, params)
-        "#{path}?".concat(params.collect{|k,v| "#{k}=#{URI.encode(v.to_s)}"}.join("&"))
+        "#{path}?".concat(params.collect{|k,v| "#{k}=#{OAuth::Helper::escape(v.to_s)}"}.join("&"))
       end
       
       # Send request
@@ -145,7 +145,7 @@ module Odesk
 
         case method
         when :get
-          url = get_url_with_params get_uri_with_format(uri), params.each { |k, v| params[k] = OAuth::Helper::escape(v) }
+          url = get_url_with_params get_uri_with_format(uri), params
           response = @access_token.get(url).body
         when :post, :put, :delete
           response = @access_token.post(get_uri_with_format(uri), params).body
