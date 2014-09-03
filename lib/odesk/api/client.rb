@@ -11,6 +11,7 @@
 # Copyright:: Copyright 2014(c) oDesk.com
 # License::   See LICENSE.txt and TOS - http://developers.odesk.com/API-Terms-of-Use
 
+require 'json'
 require 'uri'
 
 
@@ -154,7 +155,7 @@ module Odesk
           raise ArgumentError, "Don't know how to handle http method: :#{method.to_s}"
         end
         $LOG.i "got response from server", response
-        response
+        JSON.parse(response)
       end
       
     end
