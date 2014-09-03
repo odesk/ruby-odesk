@@ -11,7 +11,7 @@ class ActivitiesEngagementTest < Test::Unit::TestCase
   
   def test_get_specific
     api = Odesk::Api::Routers::Activities::Engagement.new(get_client_mock)
-    assert api.get_specific('company', 'team', '1234', {})
+    assert api.get_specific('1234')
   end
   
   def test_assign

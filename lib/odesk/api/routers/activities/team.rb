@@ -88,6 +88,15 @@ module Odesk
             @client.put '/otask/v1/tasks/companies/' + company + '/' + team + '/unarchive/' + code
           end
 
+          # Update a group of oTask/Activity records within a company
+          #
+          # Arguments:
+          #  company: (String)
+          #  params: (Hash)
+          def update_batch(company, params)
+            @client.put '/otask/v1/tasks/companies/' + company + '/tasks/batch', params
+          end
+
           private
 
           # Get by type
@@ -99,15 +108,6 @@ module Odesk
             end
 
             @client.get '/otask/v1/tasks/companies/' + company + '/' + team + '/tasks' + url
-          end
-
-          # Update a group of oTask/Activity records within a company
-          #
-          # Arguments:
-          #  company: (String)
-          #  params: (Hash)
-          def update_batch(company, params)
-            @client.put '/otask/v1/tasks/companies/' + company + '/tasks/batch', params
           end
 
         end
