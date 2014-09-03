@@ -401,7 +401,7 @@ params: (Hash)</pre>
           
           <div class="method-heading">
             <span class="method-name">get_specific</span><span
-              class="method-args">(company, team, engagement_ref, params)</span>
+              class="method-args">(engagement_ref)</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
           
@@ -422,8 +422,8 @@ params: (Hash)</pre>
             <div class="method-source-code" id="get_specific-source">
 <pre>
 <span class="ruby-comment"># File lib/odesk/api/routers/activities/engagement.rb, line 38</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_specific</span>(<span class="ruby-identifier">company</span>, <span class="ruby-identifier">team</span>, <span class="ruby-identifier">engagement_ref</span>, <span class="ruby-identifier">params</span>)
-  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/tasks/v2/tasks/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">engagement_ref</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_specific</span>(<span class="ruby-identifier">engagement_ref</span>)
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/tasks/v2/tasks/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">engagement_ref</span>
 <span class="ruby-keyword">end</span></pre>
             </div><!-- get_specific-source -->
             

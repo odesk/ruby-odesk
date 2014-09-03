@@ -430,7 +430,7 @@
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/client.rb, line 34</span>
+<span class="ruby-comment"># File lib/odesk/api/client.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">config</span>)
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span>(<span class="ruby-string">'initializing client'</span>)
   <span class="ruby-ivar">@config</span> = <span class="ruby-identifier">config</span>
@@ -477,7 +477,7 @@ param: (Hash)</pre>
             
             <div class="method-source-code" id="delete-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/client.rb, line 107</span>
+<span class="ruby-comment"># File lib/odesk/api/client.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">send_request</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-value">:delete</span>, <span class="ruby-identifier">params</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -515,7 +515,7 @@ param: (Hash)</pre>
             
             <div class="method-source-code" id="get-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/client.rb, line 80</span>
+<span class="ruby-comment"># File lib/odesk/api/client.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">send_request</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-value">:get</span>, <span class="ruby-identifier">params</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -552,7 +552,7 @@ param: (Hash)</pre>
             
             <div class="method-source-code" id="get_access_token-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/client.rb, line 63</span>
+<span class="ruby-comment"># File lib/odesk/api/client.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_access_token</span>(<span class="ruby-identifier">verifier</span>)
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;getting access token pair&quot;</span>
   <span class="ruby-ivar">@access_token</span> = <span class="ruby-ivar">@request_token</span>.<span class="ruby-identifier">get_access_token</span>(<span class="ruby-value">:oauth_verifier</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verifier</span>)
@@ -593,7 +593,7 @@ param: (Hash)</pre>
             
             <div class="method-source-code" id="get_authorization_url-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/client.rb, line 42</span>
+<span class="ruby-comment"># File lib/odesk/api/client.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_authorization_url</span>
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;requesting autorization token&quot;</span>
   <span class="ruby-ivar">@consumer</span>=<span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Consumer</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">consumer_key</span>, 
@@ -644,7 +644,7 @@ param: (Hash)</pre>
             
             <div class="method-source-code" id="post-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/client.rb, line 89</span>
+<span class="ruby-comment"># File lib/odesk/api/client.rb, line 91</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">post</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">send_request</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-value">:post</span>, <span class="ruby-identifier">params</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -682,7 +682,7 @@ param: (Hash)</pre>
             
             <div class="method-source-code" id="put-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/client.rb, line 98</span>
+<span class="ruby-comment"># File lib/odesk/api/client.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">put</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">params</span> = {})
   <span class="ruby-identifier">send_request</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-value">:put</span>, <span class="ruby-identifier">params</span>)
 <span class="ruby-keyword">end</span></pre>

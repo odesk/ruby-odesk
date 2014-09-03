@@ -79,6 +79,8 @@
           
           <li><a href="#method-i-update_activities">#update_activities</a></li>
           
+          <li><a href="#method-i-update_batch">#update_batch</a></li>
+          
         </ul>
       </div>
       
@@ -344,7 +346,7 @@
 <span class="ruby-comment"># File lib/odesk/api/routers/activities/team.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">client</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>
-  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">epoint</span> = <span class="ruby-constant">ENTRY_POINT</span> 
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">epoint</span> = <span class="ruby-constant">ENTRY_POINT</span>
 <span class="ruby-keyword">end</span></pre>
             </div><!-- new-source -->
             
@@ -594,6 +596,44 @@ params: (Hash)</pre>
 
           
         </div><!-- update_activities-method -->
+
+      
+        <div id="update_batch-method" class="method-detail ">
+          <a name="method-i-update_batch"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">update_batch</span><span
+              class="method-args">(company, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Update a group of oTask/Activity records within a company</p>
+
+<p>Arguments:</p>
+
+<pre>company: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="update_batch-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/activities/team.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_batch</span>(<span class="ruby-identifier">company</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/otask/v1/tasks/companies/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">company</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/tasks/batch'</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- update_batch-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- update_batch-method -->
 
       
       </div><!-- public-instance-method-details -->

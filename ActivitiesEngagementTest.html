@@ -361,7 +361,7 @@
 <span class="ruby-comment"># File test/test_activities_engagement.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_specific</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Engagement</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
-  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_specific</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'team'</span>, <span class="ruby-string">'1234'</span>, {})
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_specific</span>(<span class="ruby-string">'1234'</span>)
 <span class="ruby-keyword">end</span></pre>
             </div><!-- test_get_specific-source -->
             

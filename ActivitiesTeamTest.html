@@ -77,6 +77,8 @@
           
           <li><a href="#method-i-test_update_activities">#test_update_activities</a></li>
           
+          <li><a href="#method-i-test_update_batch">#test_update_batch</a></li>
+          
         </ul>
       </div>
       
@@ -515,6 +517,40 @@
 
           
         </div><!-- test_update_activities-method -->
+
+      
+        <div id="test_update_batch-method" class="method-detail ">
+          <a name="method-i-test_update_batch"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_update_batch</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_update_batch-source">
+<pre>
+<span class="ruby-comment"># File test/test_activities_team.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_update_batch</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Activities</span><span class="ruby-operator">::</span><span class="ruby-constant">Team</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">update_batch</span>(<span class="ruby-string">'company'</span>, <span class="ruby-string">'data'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_update_batch-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_update_batch-method -->
 
       
       </div><!-- public-instance-method-details -->
