@@ -13,4 +13,10 @@ class FreelancersProfileTest < Test::Unit::TestCase
     api = Odesk::Api::Routers::Freelancers::Profile.new(get_client_mock)
     assert api.get_specific('~key')
   end
+
+  def test_get_specific_brief
+    api = Odesk::Api::Routers::Freelancers::Profile.new(get_client_mock)
+    assert api.get_specific_brief('~key')
+  end
+
 end

@@ -38,4 +38,9 @@ class ActivitiesTeamTest < Test::Unit::TestCase
     api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
     assert api.unarchive_activities('company', 'team', 'code')
   end
+
+  def test_update_batch
+    api = Odesk::Api::Routers::Activities::Team.new(get_client_mock)
+    assert api.update_batch('company', 'data')
+  end
 end
