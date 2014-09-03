@@ -4,7 +4,6 @@ $:.unshift '../lib'
 
 $LOAD_PATH << File.dirname(__FILE__)
 
-require 'json'
 require 'odesk/api'
 require 'odesk/api/routers/auth'
 require 'odesk/api/routers/mc'
