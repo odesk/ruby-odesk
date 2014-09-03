@@ -36,6 +36,15 @@ module Odesk
             $LOG.i "running " + __method__.to_s
             @client.get '/profiles/v1/providers/' + key
           end
+
+          # Get brief info on specific profile
+          #
+          # Arguments:
+          #  key: (String)
+          def get_specific_brief(key)
+            $LOG.i "running " + __method__.to_s
+            @client.get '/profiles/v1/providers/' + key + '/brief'
+          end
         end
       end
     end
