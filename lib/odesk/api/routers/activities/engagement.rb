@@ -31,10 +31,7 @@ module Odesk
           # List activities for specific engagement
           #
           # Arguments:
-          #  company: (String)
-          #  team: (String)
           #  engagement_ref: (String)
-          #  params: (Hash)
           def get_specific(engagement_ref)
             @client.get '/tasks/v2/tasks/contracts/' + engagement_ref
           end
