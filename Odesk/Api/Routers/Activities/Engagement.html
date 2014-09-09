@@ -381,7 +381,7 @@ params: (Hash)</pre>
             
             <div class="method-source-code" id="assign-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/activities/engagement.rb, line 49</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/activities/engagement.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">assign</span>(<span class="ruby-identifier">company</span>, <span class="ruby-identifier">team</span>, <span class="ruby-identifier">engagement</span>, <span class="ruby-identifier">params</span>)
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/otask/v1/tasks/companies/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">company</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">team</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/engagements/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">engagement</span>, <span class="ruby-identifier">params</span>
 <span class="ruby-keyword">end</span></pre>
@@ -412,16 +412,13 @@ params: (Hash)</pre>
 
 <p>Arguments:</p>
 
-<pre>company: (String)
-team: (String)
-engagement_ref: (String)
-params: (Hash)</pre>
+<pre>engagement_ref: (String)</pre>
             
 
             
             <div class="method-source-code" id="get_specific-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/activities/engagement.rb, line 38</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/activities/engagement.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_specific</span>(<span class="ruby-identifier">engagement_ref</span>)
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/tasks/v2/tasks/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">engagement_ref</span>
 <span class="ruby-keyword">end</span></pre>
