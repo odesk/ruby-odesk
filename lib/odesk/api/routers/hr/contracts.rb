@@ -28,6 +28,26 @@ module Odesk
             @client.epoint = ENTRY_POINT 
           end
           
+          # Suspend Contract
+          #
+          # Arguments:
+          #  reference: (String)
+          #  params: (Hash)
+          def suspend_contract(reference, params)
+            $LOG.i "running " + __method__.to_s
+            @client.put '/hr/v2/contracts/' + reference + '/suspend', params
+          end
+          
+          # Restart Contract
+          #
+          # Arguments:
+          #  reference: (String)
+          #  params: (Hash)
+          def restart_contract(reference, params)
+            $LOG.i "running " + __method__.to_s
+            @client.put '/hr/v2/contracts/' + reference + '/restart', params
+          end
+          
           # End Contract
           #
           # Arguments:
