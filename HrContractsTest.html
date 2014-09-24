@@ -67,6 +67,10 @@
           
           <li><a href="#method-i-test_end_contract">#test_end_contract</a></li>
           
+          <li><a href="#method-i-test_restart_contract">#test_restart_contract</a></li>
+          
+          <li><a href="#method-i-test_suspend_contract">#test_suspend_contract</a></li>
+          
         </ul>
       </div>
       
@@ -322,7 +326,7 @@
             
             <div class="method-source-code" id="test_end_contract-source">
 <pre>
-<span class="ruby-comment"># File test/test_hr_contracts.rb, line 12</span>
+<span class="ruby-comment"># File test/test_hr_contracts.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_end_contract</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Contracts</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">end_contract</span>(<span class="ruby-string">'12'</span>, {})
@@ -335,6 +339,74 @@
 
           
         </div><!-- test_end_contract-method -->
+
+      
+        <div id="test_restart_contract-method" class="method-detail ">
+          <a name="method-i-test_restart_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_restart_contract</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_restart_contract-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_contracts.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_restart_contract</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Contracts</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">restart_contract</span>(<span class="ruby-string">'12'</span>, {})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_restart_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_restart_contract-method -->
+
+      
+        <div id="test_suspend_contract-method" class="method-detail ">
+          <a name="method-i-test_suspend_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_suspend_contract</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_suspend_contract-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_contracts.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_suspend_contract</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Contracts</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">suspend_contract</span>(<span class="ruby-string">'12'</span>, {})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_suspend_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_suspend_contract-method -->
 
       
       </div><!-- public-instance-method-details -->

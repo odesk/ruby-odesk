@@ -69,6 +69,10 @@
           
           <li><a href="#method-i-end_contract">#end_contract</a></li>
           
+          <li><a href="#method-i-restart_contract">#restart_contract</a></li>
+          
+          <li><a href="#method-i-suspend_contract">#suspend_contract</a></li>
+          
         </ul>
       </div>
       
@@ -376,7 +380,7 @@ params: (Hash)</pre>
             
             <div class="method-source-code" id="end_contract-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/hr/contracts.rb, line 36</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/contracts.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">end_contract</span>(<span class="ruby-identifier">reference</span>, <span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">'/hr/v2/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">reference</span>, <span class="ruby-identifier">params</span>
@@ -389,6 +393,84 @@ params: (Hash)</pre>
 
           
         </div><!-- end_contract-method -->
+
+      
+        <div id="restart_contract-method" class="method-detail ">
+          <a name="method-i-restart_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">restart_contract</span><span
+              class="method-args">(reference, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Restart Contract</p>
+
+<p>Arguments:</p>
+
+<pre>reference: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="restart_contract-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/contracts.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restart_contract</span>(<span class="ruby-identifier">reference</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/hr/v2/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">reference</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/restart'</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- restart_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- restart_contract-method -->
+
+      
+        <div id="suspend_contract-method" class="method-detail ">
+          <a name="method-i-suspend_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">suspend_contract</span><span
+              class="method-args">(reference, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Suspend Contract</p>
+
+<p>Arguments:</p>
+
+<pre>reference: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="suspend_contract-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/contracts.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">suspend_contract</span>(<span class="ruby-identifier">reference</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/hr/v2/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">reference</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/suspend'</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- suspend_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- suspend_contract-method -->
 
       
       </div><!-- public-instance-method-details -->
