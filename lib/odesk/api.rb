@@ -9,7 +9,7 @@
 #
 # Author::    Maksym Novozhylov (mnovozhilov@odesk.com)
 # Copyright:: Copyright 2014(c) oDesk.com
-# License::   See LICENSE.txt and TOS - http://developers.odesk.com/API-Terms-of-Use
+# License::   See LICENSE.txt and TOS - https://developers.odesk.com/api-tos.html
 
 require 'oauth'
 
