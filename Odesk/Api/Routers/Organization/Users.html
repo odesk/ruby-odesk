@@ -69,6 +69,8 @@
           
           <li><a href="#method-i-get_my_info">#get_my_info</a></li>
           
+          <li><a href="#method-i-get_specific">#get_specific</a></li>
+          
         </ul>
       </div>
       
@@ -385,6 +387,44 @@ href="../Organization.html">Organization</a></p>
 
           
         </div><!-- get_my_info-method -->
+
+      
+        <div id="get_specific-method" class="method-detail ">
+          <a name="method-i-get_specific"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_specific</span><span
+              class="method-args">(user_reference)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get Specific User Info</p>
+
+<p>Arguments:</p>
+
+<pre>user_reference: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_specific-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/organization/users.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_specific</span>(<span class="ruby-identifier">user_reference</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/hr/v2/users/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">user_reference</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_specific-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_specific-method -->
 
       
       </div><!-- public-instance-method-details -->
