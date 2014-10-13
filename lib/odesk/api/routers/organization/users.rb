@@ -33,6 +33,15 @@ module Odesk
             $LOG.i "running " + __method__.to_s
             @client.get '/hr/v2/users/me'
           end
+          
+          # Get Specific User Info
+          #
+          # Arguments:
+          #  user_reference: (String)
+          def get_specific(user_reference)
+            $LOG.i "running " + __method__.to_s
+            @client.get '/hr/v2/users/' + user_reference
+          end
         end
       end
     end

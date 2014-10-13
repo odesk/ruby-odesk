@@ -13,4 +13,9 @@ class OrganizationUsersTest < Test::Unit::TestCase
     api = Odesk::Api::Routers::Organization::Users.new(get_client_mock)
     assert api.get_my_info
   end
+  
+  def test_get_specific
+    api = Odesk::Api::Routers::Organization::Users.new(get_client_mock)
+    assert api.get_specific('12')
+  end
 end
