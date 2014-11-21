@@ -9,6 +9,16 @@ require 'mocha/test_unit'
 class HrMilestonesTest < Test::Unit::TestCase
   include TestHelper
   
+  def test_get_active_milestone
+    api = Odesk::Api::Routers::Hr::Milestones.new(get_client_mock)
+    assert api.get_active_milestone('1234')
+  end
+  
+  def test_get_submissions
+    api = Odesk::Api::Routers::Hr::Milestones.new(get_client_mock)
+    assert api.get_submissions('1234')
+  end
+  
   def test_create
     api = Odesk::Api::Routers::Hr::Milestones.new(get_client_mock)
     assert api.create({})

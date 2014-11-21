@@ -28,6 +28,24 @@ module Odesk
             @client.epoint = ENTRY_POINT 
           end
           
+          # Get active Milestone for specific Contract
+          #
+          # Arguments:
+          #  contract_id: (String)
+          def get_active_milestone(contract_id)
+            $LOG.i "running " + __method__.to_s
+            @client.get '/hr/v3/fp/milestones/statuses/active/contracts/' + contract_id
+          end
+          
+          # Get active Milestone for specific Contract
+          #
+          # Arguments:
+          #  milestone_id: (String)
+          def get_submissions(milestone_id)
+            $LOG.i "running " + __method__.to_s
+            @client.get '/hr/v3/fp/milestones/' + milestone_id + '/submissions'
+          end
+          
           # Create a new Milestone
           #
           # Arguments:
