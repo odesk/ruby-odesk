@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>Class: Odesk::Api::Routers::Freelancers::Search</title>
+  <title>Class: Odesk::Api::Routers::Hr::Submissions</title>
 
   <link rel="stylesheet" href="../../../../rdoc.css" type="text/css" media="screen" />
 
@@ -34,8 +34,8 @@
         <div class="section-body">
           <ul>
           
-            <li><a href="../../../../lib/odesk/api/routers/freelancers/search_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/odesk/api/routers/freelancers/search.rb">lib/odesk/api/routers/freelancers/search.rb</a></li>
+            <li><a href="../../../../lib/odesk/api/routers/hr/submissions_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/odesk/api/routers/hr/submissions.rb">lib/odesk/api/routers/hr/submissions.rb</a></li>
           
           </ul>
         </div>
@@ -67,7 +67,11 @@
           
           <li><a href="#method-c-new">::new</a></li>
           
-          <li><a href="#method-i-find">#find</a></li>
+          <li><a href="#method-i-approve">#approve</a></li>
+          
+          <li><a href="#method-i-reject">#reject</a></li>
+          
+          <li><a href="#method-i-request_approval">#request_approval</a></li>
           
         </ul>
       </div>
@@ -277,11 +281,11 @@
   </div>
 
   <div id="documentation">
-    <h1 class="class">Odesk::Api::Routers::Freelancers::Search</h1>
+    <h1 class="class">Odesk::Api::Routers::Hr::Submissions</h1>
 
     <div id="description" class="description">
       
-<p><a href="Search.html">Search</a> Freelancer's profiles</p>
+<p><a href="Submissions.html">Submissions</a> workflow</p>
 
     </div><!-- description -->
 
@@ -339,7 +343,7 @@
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/freelancers/search.rb, line 26</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/submissions.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">client</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">epoint</span> = <span class="ruby-constant">ENTRY_POINT</span> 
@@ -360,12 +364,90 @@
         <h3 class="section-header">Public Instance Methods</h3>
 
       
-        <div id="find-method" class="method-detail ">
-          <a name="method-i-find"></a>
+        <div id="approve-method" class="method-detail ">
+          <a name="method-i-approve"></a>
 
           
           <div class="method-heading">
-            <span class="method-name">find</span><span
+            <span class="method-name">approve</span><span
+              class="method-args">(submission_id, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Approve an existing Submission</p>
+
+<p>Arguments:</p>
+
+<pre>submission_id: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="approve-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/submissions.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">approve</span>(<span class="ruby-identifier">submission_id</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/hr/v3/fp/submissions/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">submission_id</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/approve'</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- approve-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- approve-method -->
+
+      
+        <div id="reject-method" class="method-detail ">
+          <a name="method-i-reject"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reject</span><span
+              class="method-args">(submission_id, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Reject an existing Submission</p>
+
+<p>Arguments:</p>
+
+<pre>submission_id: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="reject-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/submissions.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reject</span>(<span class="ruby-identifier">submission_id</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/hr/v3/fp/submissions/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">submission_id</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/reject'</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- reject-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reject-method -->
+
+      
+        <div id="request_approval-method" class="method-detail ">
+          <a name="method-i-request_approval"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">request_approval</span><span
               class="method-args">(params)</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
@@ -373,7 +455,7 @@
 
           <div class="method-description">
             
-            <p><a href="Search.html">Search</a> profiles</p>
+            <p>Freelancer submits work for the client to approve</p>
 
 <p>Arguments:</p>
 
@@ -381,21 +463,21 @@
             
 
             
-            <div class="method-source-code" id="find-source">
+            <div class="method-source-code" id="request_approval-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/freelancers/search.rb, line 35</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>)
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/submissions.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request_approval</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
-  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/profiles/v2/search/providers'</span>, <span class="ruby-identifier">params</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">post</span> <span class="ruby-string">'/hr/v3/fp/submissions'</span>, <span class="ruby-identifier">params</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- find-source -->
+            </div><!-- request_approval-source -->
             
           </div>
 
           
 
           
-        </div><!-- find-method -->
+        </div><!-- request_approval-method -->
 
       
       </div><!-- public-instance-method-details -->

@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>Class: Odesk::Api::Routers::Freelancers::Search</title>
+  <title>Class: Odesk::Api::Routers::Hr::Milestones</title>
 
   <link rel="stylesheet" href="../../../../rdoc.css" type="text/css" media="screen" />
 
@@ -34,8 +34,8 @@
         <div class="section-body">
           <ul>
           
-            <li><a href="../../../../lib/odesk/api/routers/freelancers/search_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/odesk/api/routers/freelancers/search.rb">lib/odesk/api/routers/freelancers/search.rb</a></li>
+            <li><a href="../../../../lib/odesk/api/routers/hr/milestones_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/odesk/api/routers/hr/milestones.rb">lib/odesk/api/routers/hr/milestones.rb</a></li>
           
           </ul>
         </div>
@@ -67,7 +67,19 @@
           
           <li><a href="#method-c-new">::new</a></li>
           
-          <li><a href="#method-i-find">#find</a></li>
+          <li><a href="#method-i-activate">#activate</a></li>
+          
+          <li><a href="#method-i-approve">#approve</a></li>
+          
+          <li><a href="#method-i-create">#create</a></li>
+          
+          <li><a href="#method-i-delete">#delete</a></li>
+          
+          <li><a href="#method-i-edit">#edit</a></li>
+          
+          <li><a href="#method-i-get_active_milestone">#get_active_milestone</a></li>
+          
+          <li><a href="#method-i-get_submissions">#get_submissions</a></li>
           
         </ul>
       </div>
@@ -277,11 +289,11 @@
   </div>
 
   <div id="documentation">
-    <h1 class="class">Odesk::Api::Routers::Freelancers::Search</h1>
+    <h1 class="class">Odesk::Api::Routers::Hr::Milestones</h1>
 
     <div id="description" class="description">
       
-<p><a href="Search.html">Search</a> Freelancer's profiles</p>
+<p><a href="Milestones.html">Milestones</a> workflow</p>
 
     </div><!-- description -->
 
@@ -339,7 +351,7 @@
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/freelancers/search.rb, line 26</span>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">client</span>)
   <span class="ruby-ivar">@client</span> = <span class="ruby-identifier">client</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">epoint</span> = <span class="ruby-constant">ENTRY_POINT</span> 
@@ -360,12 +372,90 @@
         <h3 class="section-header">Public Instance Methods</h3>
 
       
-        <div id="find-method" class="method-detail ">
-          <a name="method-i-find"></a>
+        <div id="activate-method" class="method-detail ">
+          <a name="method-i-activate"></a>
 
           
           <div class="method-heading">
-            <span class="method-name">find</span><span
+            <span class="method-name">activate</span><span
+              class="method-args">(milestone_id, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Activate an existing Milestone</p>
+
+<p>Arguments:</p>
+
+<pre>milestone_id: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="activate-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">activate</span>(<span class="ruby-identifier">milestone_id</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/hr/v3/fp/milestones/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">milestone_id</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/activate'</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- activate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- activate-method -->
+
+      
+        <div id="approve-method" class="method-detail ">
+          <a name="method-i-approve"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">approve</span><span
+              class="method-args">(milestone_id, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Approve an existing Milestone</p>
+
+<p>Arguments:</p>
+
+<pre>milestone_id: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="approve-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">approve</span>(<span class="ruby-identifier">milestone_id</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/hr/v3/fp/milestones/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">milestone_id</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/approve'</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- approve-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- approve-method -->
+
+      
+        <div id="create-method" class="method-detail ">
+          <a name="method-i-create"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">create</span><span
               class="method-args">(params)</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
@@ -373,7 +463,7 @@
 
           <div class="method-description">
             
-            <p><a href="Search.html">Search</a> profiles</p>
+            <p>Create a new Milestone</p>
 
 <p>Arguments:</p>
 
@@ -381,21 +471,174 @@
             
 
             
-            <div class="method-source-code" id="find-source">
+            <div class="method-source-code" id="create-source">
 <pre>
-<span class="ruby-comment"># File lib/odesk/api/routers/freelancers/search.rb, line 35</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>)
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
-  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/profiles/v2/search/providers'</span>, <span class="ruby-identifier">params</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">post</span> <span class="ruby-string">'/hr/v3/fp/milestones'</span>, <span class="ruby-identifier">params</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- find-source -->
+            </div><!-- create-source -->
             
           </div>
 
           
 
           
-        </div><!-- find-method -->
+        </div><!-- create-method -->
+
+      
+        <div id="delete-method" class="method-detail ">
+          <a name="method-i-delete"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">delete</span><span
+              class="method-args">(milestone_id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Delete an existing Milestone</p>
+
+<p>Arguments:</p>
+
+<pre>milestone_id: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="delete-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">milestone_id</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">'/hr/v3/fp/milestones/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">milestone_id</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- delete-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- delete-method -->
+
+      
+        <div id="edit-method" class="method-detail ">
+          <a name="method-i-edit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">edit</span><span
+              class="method-args">(milestone_id, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Edit an existing Milestone</p>
+
+<p>Arguments:</p>
+
+<pre>milestone_id: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="edit-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>(<span class="ruby-identifier">milestone_id</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/hr/v3/fp/milestones/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">milestone_id</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- edit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- edit-method -->
+
+      
+        <div id="get_active_milestone-method" class="method-detail ">
+          <a name="method-i-get_active_milestone"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_active_milestone</span><span
+              class="method-args">(contract_id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get active Milestone for specific Contract</p>
+
+<p>Arguments:</p>
+
+<pre>contract_id: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_active_milestone-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_active_milestone</span>(<span class="ruby-identifier">contract_id</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/hr/v3/fp/milestones/statuses/active/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">contract_id</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_active_milestone-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_active_milestone-method -->
+
+      
+        <div id="get_submissions-method" class="method-detail ">
+          <a name="method-i-get_submissions"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_submissions</span><span
+              class="method-args">(milestone_id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get active Milestone for specific Contract</p>
+
+<p>Arguments:</p>
+
+<pre>milestone_id: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_submissions-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/hr/milestones.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_submissions</span>(<span class="ruby-identifier">milestone_id</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/hr/v3/fp/milestones/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">milestone_id</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/submissions'</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_submissions-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_submissions-method -->
 
       
       </div><!-- public-instance-method-details -->

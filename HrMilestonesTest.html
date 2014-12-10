@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>Class: LoggerTest</title>
+  <title>Class: HrMilestonesTest</title>
 
   <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
 
@@ -34,8 +34,8 @@
         <div class="section-body">
           <ul>
           
-            <li><a href="./test/test_logger_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="test/test_logger.rb">test/test_logger.rb</a></li>
+            <li><a href="./test/test_hr_milestones_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="test/test_hr_milestones.rb">test/test_hr_milestones.rb</a></li>
           
           </ul>
         </div>
@@ -65,12 +65,36 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
-          <li><a href="#method-i-test_i">#test_i</a></li>
+          <li><a href="#method-i-test_activate">#test_activate</a></li>
+          
+          <li><a href="#method-i-test_approve">#test_approve</a></li>
+          
+          <li><a href="#method-i-test_create">#test_create</a></li>
+          
+          <li><a href="#method-i-test_delete">#test_delete</a></li>
+          
+          <li><a href="#method-i-test_edit">#test_edit</a></li>
+          
+          <li><a href="#method-i-test_get_active_milestone">#test_get_active_milestone</a></li>
+          
+          <li><a href="#method-i-test_get_submissions">#test_get_submissions</a></li>
           
         </ul>
       </div>
       
 
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="TestHelper.html">TestHelper</a></li>
+        
+        
+        </ul>
+      </div>
       
     </div>
 
@@ -275,7 +299,7 @@
   </div>
 
   <div id="documentation">
-    <h1 class="class">LoggerTest</h1>
+    <h1 class="class">HrMilestonesTest</h1>
 
     <div id="description" class="description">
       
@@ -299,12 +323,12 @@
         <h3 class="section-header">Public Instance Methods</h3>
 
       
-        <div id="test_i-method" class="method-detail ">
-          <a name="method-i-test_i"></a>
+        <div id="test_activate-method" class="method-detail ">
+          <a name="method-i-test_activate"></a>
 
           
           <div class="method-heading">
-            <span class="method-name">test_i</span><span
+            <span class="method-name">test_activate</span><span
               class="method-args">()</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
@@ -316,24 +340,225 @@
             
 
             
-            <div class="method-source-code" id="test_i-source">
+            <div class="method-source-code" id="test_activate-source">
 <pre>
-<span class="ruby-comment"># File test/test_logger.rb, line 8</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_i</span>
-  <span class="ruby-identifier">$DEBUG</span> = <span class="ruby-keyword">true</span>
-  <span class="ruby-ivar">@log</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>
-  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:puts</span>).<span class="ruby-identifier">with</span>(<span class="ruby-string">&quot;&gt; bar&quot;</span>)
-  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;bar&quot;</span>
-  <span class="ruby-identifier">$DEBUG</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-comment"># File test/test_hr_milestones.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_activate</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Milestones</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">activate</span>(<span class="ruby-string">'1234'</span>, {})
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- test_i-source -->
+            </div><!-- test_activate-source -->
             
           </div>
 
           
 
           
-        </div><!-- test_i-method -->
+        </div><!-- test_activate-method -->
+
+      
+        <div id="test_approve-method" class="method-detail ">
+          <a name="method-i-test_approve"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_approve</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_approve-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_milestones.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_approve</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Milestones</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">approve</span>(<span class="ruby-string">'1234'</span>, {})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_approve-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_approve-method -->
+
+      
+        <div id="test_create-method" class="method-detail ">
+          <a name="method-i-test_create"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_create</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_create-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_milestones.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_create</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Milestones</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">create</span>({})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_create-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_create-method -->
+
+      
+        <div id="test_delete-method" class="method-detail ">
+          <a name="method-i-test_delete"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_delete</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_delete-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_milestones.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_delete</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Milestones</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'1234'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_delete-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_delete-method -->
+
+      
+        <div id="test_edit-method" class="method-detail ">
+          <a name="method-i-test_edit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_edit</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_edit-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_milestones.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_edit</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Milestones</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">edit</span>(<span class="ruby-string">'1234'</span>, {})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_edit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_edit-method -->
+
+      
+        <div id="test_get_active_milestone-method" class="method-detail ">
+          <a name="method-i-test_get_active_milestone"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_get_active_milestone</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_get_active_milestone-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_milestones.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_active_milestone</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Milestones</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_active_milestone</span>(<span class="ruby-string">'1234'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_get_active_milestone-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_get_active_milestone-method -->
+
+      
+        <div id="test_get_submissions-method" class="method-detail ">
+          <a name="method-i-test_get_submissions"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_get_submissions</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_get_submissions-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_milestones.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_submissions</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Milestones</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_submissions</span>(<span class="ruby-string">'1234'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_get_submissions-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_get_submissions-method -->
 
       
       </div><!-- public-instance-method-details -->
