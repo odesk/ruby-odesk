@@ -29,6 +29,11 @@ class MetadataTest < Test::Unit::TestCase
     assert api.get_categories
   end
     
+  def test_get_categories_v2
+    api = Odesk::Api::Routers::Metadata.new(get_client_mock)
+    assert api.get_categories_v2
+  end
+    
   def test_get_reasons
     api = Odesk::Api::Routers::Metadata.new(get_client_mock)
     assert api.get_reasons({})
