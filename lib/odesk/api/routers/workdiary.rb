@@ -37,6 +37,16 @@ module Odesk
           $LOG.i "running " + __method__.to_s
           @client.get '/team/v1/workdiaries/' + company + '/' + username + '/' + date, params
         end
+        
+        # Get Work Diary by Contract
+        # Arguments:
+        #  contract: (String)
+        #  date: (String)
+        #  params: (Hash)
+        def get_by_contract(contract, date, params = {})
+          $LOG.i "running " + __method__.to_s
+          @client.get '/team/v2/workdiaries/contracts/' + contract + '/' + date, params
+        end
       end
     end
   end
