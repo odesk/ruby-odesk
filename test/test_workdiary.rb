@@ -13,4 +13,9 @@ class WorkdiaryTest < Test::Unit::TestCase
     api = Odesk::Api::Routers::Workdiary.new(get_client_mock)
     assert api.get('company', 'username', '20140101', {})
   end
+  
+  def test_get_by_contract
+    api = Odesk::Api::Routers::Workdiary.new(get_client_mock)
+    assert api.get_by_contract('1234', '20140101', {})
+  end
 end

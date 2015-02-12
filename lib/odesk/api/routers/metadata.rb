@@ -33,6 +33,12 @@ module Odesk
           @client.get '/profiles/v1/metadata/categories'
         end
         
+        # Get categories (v2)
+        def get_categories_v2
+          $LOG.i "running " + __method__.to_s
+          @client.get '/profiles/v2/metadata/categories'
+        end
+        
         # Get skills
         def get_skills
           $LOG.i "running " + __method__.to_s
