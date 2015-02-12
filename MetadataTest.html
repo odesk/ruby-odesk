@@ -67,6 +67,8 @@
           
           <li><a href="#method-i-test_get_categories">#test_get_categories</a></li>
           
+          <li><a href="#method-i-test_get_categories_v2">#test_get_categories_v2</a></li>
+          
           <li><a href="#method-i-test_get_reasons">#test_get_reasons</a></li>
           
           <li><a href="#method-i-test_get_regions">#test_get_regions</a></li>
@@ -353,6 +355,40 @@
         </div><!-- test_get_categories-method -->
 
       
+        <div id="test_get_categories_v2-method" class="method-detail ">
+          <a name="method-i-test_get_categories_v2"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_get_categories_v2</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_get_categories_v2-source">
+<pre>
+<span class="ruby-comment"># File test/test_metadata.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_categories_v2</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Metadata</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_categories_v2</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_get_categories_v2-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_get_categories_v2-method -->
+
+      
         <div id="test_get_reasons-method" class="method-detail ">
           <a name="method-i-test_get_reasons"></a>
 
@@ -372,7 +408,7 @@
             
             <div class="method-source-code" id="test_get_reasons-source">
 <pre>
-<span class="ruby-comment"># File test/test_metadata.rb, line 32</span>
+<span class="ruby-comment"># File test/test_metadata.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_reasons</span>
   <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Metadata</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
   <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_reasons</span>({})

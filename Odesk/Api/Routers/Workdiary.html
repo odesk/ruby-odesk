@@ -69,6 +69,8 @@
           
           <li><a href="#method-i-get">#get</a></li>
           
+          <li><a href="#method-i-get_by_contract">#get_by_contract</a></li>
+          
         </ul>
       </div>
       
@@ -397,6 +399,44 @@ params: (Hash)</pre>
 
           
         </div><!-- get-method -->
+
+      
+        <div id="get_by_contract-method" class="method-detail ">
+          <a name="method-i-get_by_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_by_contract</span><span
+              class="method-args">(contract, date, params = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get Work Diary by Contract Arguments:</p>
+
+<pre>contract: (String)
+date: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_by_contract-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/workdiary.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_by_contract</span>(<span class="ruby-identifier">contract</span>, <span class="ruby-identifier">date</span>, <span class="ruby-identifier">params</span> = {})
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/team/v2/workdiaries/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">contract</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">date</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_by_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_by_contract-method -->
 
       
       </div><!-- public-instance-method-details -->
