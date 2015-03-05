@@ -46,6 +46,16 @@ module Odesk
               $LOG.i "running " + __method__.to_s
               @client.get '/offers/v1/clients/offers/' + reference
             end
+            
+            # Get specific offer
+            #
+            # Arguments:
+            #  reference: (String)
+            #  params: (Hash)
+            def actions(reference, params)
+              $LOG.i "running " + __method__.to_s
+              @client.post '/offers/v1/clients/actions/' + reference, params
+            end
           end
         end
       end
