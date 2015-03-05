@@ -18,4 +18,9 @@ class HrFreelancersOffersTest < Test::Unit::TestCase
     api = Odesk::Api::Routers::Hr::Freelancers::Offers.new(get_client_mock)
     assert api.get_specific('12')
   end
+  
+  def test_actions
+    api = Odesk::Api::Routers::Hr::Freelancers::Offers.new(get_client_mock)
+    assert api.actions('12', {})
+  end
 end
