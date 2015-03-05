@@ -65,6 +65,8 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
+          <li><a href="#method-i-test_actions">#test_actions</a></li>
+          
           <li><a href="#method-i-test_get_list">#test_get_list</a></li>
           
           <li><a href="#method-i-test_get_specific">#test_get_specific</a></li>
@@ -311,6 +313,40 @@
       
       <div id="public-instance-method-details" class="method-section section">
         <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="test_actions-method" class="method-detail ">
+          <a name="method-i-test_actions"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_actions</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_actions-source">
+<pre>
+<span class="ruby-comment"># File test/test_hr_freelancers_offers.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_actions</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Hr</span><span class="ruby-operator">::</span><span class="ruby-constant">Freelancers</span><span class="ruby-operator">::</span><span class="ruby-constant">Offers</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">actions</span>(<span class="ruby-string">'12'</span>, {})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_actions-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_actions-method -->
 
       
         <div id="test_get_list-method" class="method-detail ">
