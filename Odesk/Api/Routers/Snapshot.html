@@ -414,7 +414,7 @@ ts: (String)</pre>
           
           <div class="method-heading">
             <span class="method-name">delete_by_contract</span><span
-              class="method-args">(contract, username, ts)</span>
+              class="method-args">(contract, ts)</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
           
@@ -431,7 +431,7 @@ ts: (String)</pre>
             <div class="method-source-code" id="delete_by_contract-source">
 <pre>
 <span class="ruby-comment"># File lib/odesk/api/routers/snapshot.rb, line 88</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_by_contract</span>(<span class="ruby-identifier">contract</span>, <span class="ruby-identifier">username</span>, <span class="ruby-identifier">ts</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_by_contract</span>(<span class="ruby-identifier">contract</span>, <span class="ruby-identifier">ts</span>)
   <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
   <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">'/team/v2/snapshots/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">contract</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ts</span>
 <span class="ruby-keyword">end</span></pre>
