@@ -67,9 +67,15 @@
           
           <li><a href="#method-i-test_delete">#test_delete</a></li>
           
+          <li><a href="#method-i-test_delete_by_contract">#test_delete_by_contract</a></li>
+          
           <li><a href="#method-i-test_get">#test_get</a></li>
           
+          <li><a href="#method-i-test_get_by_contract">#test_get_by_contract</a></li>
+          
           <li><a href="#method-i-test_update">#test_update</a></li>
+          
+          <li><a href="#method-i-test_update_by_contract">#test_update_by_contract</a></li>
           
         </ul>
       </div>
@@ -349,6 +355,40 @@
         </div><!-- test_delete-method -->
 
       
+        <div id="test_delete_by_contract-method" class="method-detail ">
+          <a name="method-i-test_delete_by_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_delete_by_contract</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_delete_by_contract-source">
+<pre>
+<span class="ruby-comment"># File test/test_snapshot.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_delete_by_contract</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Snapshot</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">delete_by_contract</span>(<span class="ruby-string">'contract'</span>, <span class="ruby-string">'20140101'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_delete_by_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_delete_by_contract-method -->
+
+      
         <div id="test_get-method" class="method-detail ">
           <a name="method-i-test_get"></a>
 
@@ -383,6 +423,40 @@
         </div><!-- test_get-method -->
 
       
+        <div id="test_get_by_contract-method" class="method-detail ">
+          <a name="method-i-test_get_by_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_get_by_contract</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_get_by_contract-source">
+<pre>
+<span class="ruby-comment"># File test/test_snapshot.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_get_by_contract</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Snapshot</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">get_by_contract</span>(<span class="ruby-string">'contract'</span>, <span class="ruby-string">'20140101'</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_get_by_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_get_by_contract-method -->
+
+      
         <div id="test_update-method" class="method-detail ">
           <a name="method-i-test_update"></a>
 
@@ -415,6 +489,40 @@
 
           
         </div><!-- test_update-method -->
+
+      
+        <div id="test_update_by_contract-method" class="method-detail ">
+          <a name="method-i-test_update_by_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">test_update_by_contract</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="test_update_by_contract-source">
+<pre>
+<span class="ruby-comment"># File test/test_snapshot.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_update_by_contract</span>
+  <span class="ruby-identifier">api</span> = <span class="ruby-constant">Odesk</span><span class="ruby-operator">::</span><span class="ruby-constant">Api</span><span class="ruby-operator">::</span><span class="ruby-constant">Routers</span><span class="ruby-operator">::</span><span class="ruby-constant">Snapshot</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">get_client_mock</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">api</span>.<span class="ruby-identifier">update_by_contract</span>(<span class="ruby-string">'contract'</span>, <span class="ruby-string">'20140101'</span>, {})
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- test_update_by_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- test_update_by_contract-method -->
 
       
       </div><!-- public-instance-method-details -->

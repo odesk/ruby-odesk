@@ -69,9 +69,15 @@
           
           <li><a href="#method-i-delete">#delete</a></li>
           
+          <li><a href="#method-i-delete_by_contract">#delete_by_contract</a></li>
+          
           <li><a href="#method-i-get">#get</a></li>
           
+          <li><a href="#method-i-get_by_contract">#get_by_contract</a></li>
+          
           <li><a href="#method-i-update">#update</a></li>
+          
+          <li><a href="#method-i-update_by_contract">#update_by_contract</a></li>
           
         </ul>
       </div>
@@ -402,6 +408,43 @@ ts: (String)</pre>
         </div><!-- delete-method -->
 
       
+        <div id="delete_by_contract-method" class="method-detail ">
+          <a name="method-i-delete_by_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">delete_by_contract</span><span
+              class="method-args">(contract, username, ts)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Delete snapshot by specific contract Arguments:</p>
+
+<pre>contract: (String)
+ts: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="delete_by_contract-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/snapshot.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_by_contract</span>(<span class="ruby-identifier">contract</span>, <span class="ruby-identifier">username</span>, <span class="ruby-identifier">ts</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">'/team/v2/snapshots/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">contract</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ts</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- delete_by_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- delete_by_contract-method -->
+
+      
         <div id="get-method" class="method-detail ">
           <a name="method-i-get"></a>
 
@@ -440,6 +483,45 @@ ts: (String)</pre>
 
           
         </div><!-- get-method -->
+
+      
+        <div id="get_by_contract-method" class="method-detail ">
+          <a name="method-i-get_by_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_by_contract</span><span
+              class="method-args">(contract, ts)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get snapshot info by specific contract</p>
+
+<p>Arguments:</p>
+
+<pre>contract: (String)
+ts: (String)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_by_contract-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/snapshot.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_by_contract</span>(<span class="ruby-identifier">contract</span>, <span class="ruby-identifier">ts</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">'/team/v2/snapshots/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">contract</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ts</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_by_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_by_contract-method -->
 
       
         <div id="update-method" class="method-detail ">
@@ -481,6 +563,46 @@ params: (Hash)</pre>
 
           
         </div><!-- update-method -->
+
+      
+        <div id="update_by_contract-method" class="method-detail ">
+          <a name="method-i-update_by_contract"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">update_by_contract</span><span
+              class="method-args">(contract, ts, params)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Update snapshot by specific contract</p>
+
+<p>Arguments:</p>
+
+<pre>contract: (String)
+ts: (String)
+params: (Hash)</pre>
+            
+
+            
+            <div class="method-source-code" id="update_by_contract-source">
+<pre>
+<span class="ruby-comment"># File lib/odesk/api/routers/snapshot.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_by_contract</span>(<span class="ruby-identifier">contract</span>, <span class="ruby-identifier">ts</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">$LOG</span>.<span class="ruby-identifier">i</span> <span class="ruby-string">&quot;running &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">__method__</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">put</span> <span class="ruby-string">'/team/v2/snapshots/contracts/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">contract</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ts</span>, <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- update_by_contract-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- update_by_contract-method -->
 
       
       </div><!-- public-instance-method-details -->
