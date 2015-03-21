@@ -23,4 +23,19 @@ class SnapshotTest < Test::Unit::TestCase
     api = Odesk::Api::Routers::Snapshot.new(get_client_mock)
     assert api.delete('company', 'username', '20140101')
   end
+  
+  def test_get_by_contract
+    api = Odesk::Api::Routers::Snapshot.new(get_client_mock)
+    assert api.get_by_contract('contract', '20140101')
+  end
+  
+  def test_update_by_contract
+    api = Odesk::Api::Routers::Snapshot.new(get_client_mock)
+    assert api.update_by_contract('contract', '20140101', {})
+  end
+    
+  def test_delete_by_contract
+    api = Odesk::Api::Routers::Snapshot.new(get_client_mock)
+    assert api.delete_by_contract('contract', '20140101')
+  end
 end
