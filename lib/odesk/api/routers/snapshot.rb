@@ -85,7 +85,7 @@ module Odesk
         # Arguments:
         #  contract: (String)
         #  ts: (String)
-        def delete_by_contract(contract, username, ts)
+        def delete_by_contract(contract, ts)
           $LOG.i "running " + __method__.to_s
           @client.delete '/team/v2/snapshots/contracts/' + contract + '/' + ts
         end
