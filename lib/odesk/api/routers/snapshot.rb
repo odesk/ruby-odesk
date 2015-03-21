@@ -59,6 +59,36 @@ module Odesk
           $LOG.i "running " + __method__.to_s
           @client.delete '/team/v1/snapshots/' + company + '/' + username + '/' + ts
         end
+        
+        # Get snapshot info by specific contract
+        #
+        # Arguments:
+        #  contract: (String)
+        #  ts: (String)
+        def get_by_contract(contract, ts)
+          $LOG.i "running " + __method__.to_s
+          @client.get '/team/v2/snapshots/contracts/' + contract + '/' + ts
+        end
+        
+        # Update snapshot by specific contract
+        #
+        # Arguments:
+        #  contract: (String)
+        #  ts: (String)
+        #  params: (Hash)
+        def update_by_contract(contract, ts, params)
+          $LOG.i "running " + __method__.to_s
+          @client.put '/team/v2/snapshots/contracts/' + contract + '/' + ts, params
+        end
+        
+        # Delete snapshot by specific contract
+        # Arguments:
+        #  contract: (String)
+        #  ts: (String)
+        def delete_by_contract(contract, username, ts)
+          $LOG.i "running " + __method__.to_s
+          @client.delete '/team/v2/snapshots/contracts/' + contract + '/' + ts
+        end
       end
     end
   end
