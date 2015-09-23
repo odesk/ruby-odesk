@@ -1,3 +1,5 @@
+# **DEPRECATED (use https://github.com/upwork/ruby-upwork instead)**
+
 Ruby bindings for oDesk API
 ============
 
